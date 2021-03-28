@@ -10,8 +10,9 @@ public:
 	Population(int geneRange, int n);
 	~Population();
 
-	std::vector<Candidate> getPopulation();
+	std::vector<Candidate>& getPopulation();
 	void printPopulation();
+	void measurePopulation(Locations l);
 
 protected:
 

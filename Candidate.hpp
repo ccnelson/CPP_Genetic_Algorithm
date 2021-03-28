@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "Locations.hpp"
 
 class Candidate
 {
@@ -20,6 +21,8 @@ public:
 
 	std::vector<int> getPhenotype();
 	void printPhenoType();
+
+	void Measure(Locations l);
 
 	float getDistance();
 	float getScore();

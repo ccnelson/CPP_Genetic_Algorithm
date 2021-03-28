@@ -7,13 +7,15 @@
 int main() 
 {
 	std::srand(unsigned(std::time(0)));
-	const int POPULATION_SIZE = 100;
+	const int POPULATION_SIZE = 10;
 
 	Locations testLoc(std::vector<Coords> { Coords(-1.0f, -1.0f), Coords(0.0f, -1.0f), Coords(1.0f, -1.0f),
 											Coords(-1.0f, 0.0f), Coords(1.0f, 0.0f),
 											Coords(-1.0f, 1.0f), Coords(0.0f, 1.0f), Coords(1.0f, 1.0f) });
 	
 	Population popA(testLoc.getLocs().size(), POPULATION_SIZE);
+
+	popA.measurePopulation(testLoc);
 
 	testLoc.printLocs();
 	popA.printPopulation();

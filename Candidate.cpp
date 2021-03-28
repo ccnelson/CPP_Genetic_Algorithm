@@ -2,6 +2,7 @@
 #include <algorithm>
 //#include <cstdlib>
 #include <iostream>
+#include <cmath>
 
 
 int myrandom(int i) { return std::rand() % i; }
@@ -52,4 +53,15 @@ void Candidate::printPhenoType()
 		std::cout << p;
 	}
 	std::cout << std::endl;
+}
+
+void Candidate::Measure(Locations l)
+{
+	std::vector<Coords> locs = l.getLocs();
+	for (int i = 0; i < phenotype.size() -1; i++)
+	{
+		float x2 = (locs[this->phenotype[i + 1]].x) - (locs[this->phenotype[i]].x);
+		float y2 = (locs[this->phenotype[i + 1]].y) - (locs[this->phenotype[i]].y);
+		this->distance += std::hypot(x2, y2);
+	}
 }

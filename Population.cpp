@@ -11,7 +11,7 @@ Population::Population(int geneRange, int n)
 
 Population::~Population() {}
 
-std::vector<Candidate> Population::getPopulation() { return this->population; }
+std::vector<Candidate>& Population::getPopulation() { return this->population; }
 
 void Population::printPopulation()
 {
@@ -20,6 +20,14 @@ void Population::printPopulation()
 		p.printStats();
 		p.printPhenoType();
 		std::cout << "- - - - - - - - " << std::endl;
+	}
+}
+
+void Population::measurePopulation(Locations l)
+{
+	for (auto& p : this->population)
+	{
+		p.Measure(l);
 	}
 }
 
