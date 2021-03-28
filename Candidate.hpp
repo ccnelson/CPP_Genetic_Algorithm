@@ -26,6 +26,7 @@ public:
 
 	float getDistance();
 	float getScore();
+	void setScore(float s);
 	bool getIsParent();
 
 	void printStats();

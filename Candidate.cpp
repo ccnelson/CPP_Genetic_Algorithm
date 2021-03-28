@@ -30,6 +30,12 @@ std::vector<int> Candidate::getGenotype() {	return this->genotype; }
 std::vector<int> Candidate::getPhenotype() { return this->phenotype; }
 float Candidate::getDistance() { return this->distance; }
 float Candidate::getScore() { return this->score; }
+
+void Candidate::setScore(float s)
+{
+	this->score = s;
+}
+
 bool Candidate::getIsParent() {	return this->isParent; }
 
 void Candidate::printStats()
